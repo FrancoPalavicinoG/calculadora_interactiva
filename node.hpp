@@ -5,7 +5,7 @@ namespace eda {
 
 class Node {
 private:
-	int data;
+	float data;
 	Node* ptrNext;
 public:
 	Node();

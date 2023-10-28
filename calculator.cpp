@@ -1,13 +1,15 @@
 #include <iostream>
 #include <string>
 #include <sstream>
+#include <stack>
 #include "node.hpp"
 #include "stack.hpp"
 #include "calculator.hpp"
 #include "ab.hpp"
+#include "treeNode.hpp"
+#include "treeStack.hpp"
 
 using namespace eda;
-using namespace trees;
 using namespace std;
 
 namespace calculator {
@@ -148,31 +150,27 @@ void Calculator::printVar(const string s) {
 }
 
 void Calculator::tree(string s) {
-    Stack p;
+    TreeStack p;
     istringstream ss(s);
     string token;
-    AB tree;
+    Tree tree;
     while (ss >> token) {
         if (token == "+" || token == "-" || token == "*" || token == "/" || token == "^") {
-            //tree.insert(0);
-            int second = p.top()->getData();
+            tree.insert(token);
+            std::string left = p.top()->getData();
             p.pop();
-            //tree.insert(second);
-            int first = p.top()->getData();
-            //tree.insert(first);
+            tree.insert(left);
+            std::string right = p.top()->getData();
             p.pop();
-      } else {            
-            if (token == "ans"){
-                p.push(10); 
-            }
-            else{
-                int num = stoi(token);
-                p.push(num);
-            }
+            tree.insert(right);
+            p.push(token);
+        } else {           
+            p.push(token);
         }
     }
-    //tree.traverse();
+    tree.traverse();
 }
+    
 
 void Calculator::interfaz() {
     cout << "\n";
@@ -191,15 +189,13 @@ void Calculator::interfaz() {
                 setVar(comando);
             }else{
                 string postfixExpression = infixToPostfix(comando);
-                //tree(postfixExpression);
-                int result = postfix(postfixExpression);
+                tree(postfixExpression);
+                float result = postfix(postfixExpression);
                 cout << "ans = " << result << endl;
             }
         }
     }
 }
-
-
 }
 
 int main() {
@@ -230,30 +226,4 @@ int main() {
    
     return 0;
 }
-
-
-// int main(int nargas, char** vargs){
-// 	trees::AB abb;
-// 	abb.insert(16);
-// 	abb.insert(4);
-// 	abb.insert(2);
-// 	abb.insert(20);
-// 	abb.insert(15);
-// 	abb.insert(18);
-// 	abb.insert(35);
-// 	abb.insert(50);
-// 	//abb.showASC();
-// 	//abb.updateSize();
-// 	abb.traverse();
-
-// 	// trees::ABBNode* node = nullptr;
-// 	// for (int k = 1; k<= 8; k++ ){
-// 	// 	node = abb.k_element(k);
-// 	// 	if (node != nullptr){
-// 	// 		std::cout << "k = " <<k << " --> "<< node->getData() << std::endl;
-// 	// 	}
-// 	// }
-
-// 	return 0;
-// }
 

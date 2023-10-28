@@ -4,7 +4,7 @@
 namespace calculator {
 	class Calculator{
 	public:
-        int ans = 0;
+        float ans = 0;
         std::map <std::string, int> var;
         void setVar(std::string s);
         void interfaz();

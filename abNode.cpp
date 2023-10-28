@@ -1,13 +1,14 @@
 #include "abNode.hpp"
+#include <string>
 
-namespace trees {
+namespace eda {
 
 ABNode::ABNode():
-		ptrLeft(nullptr), data(-1), ptrRight(nullptr) {
+		ptrLeft(nullptr), data(""), ptrRight(nullptr) {
 	// TODO Auto-generated constructor stub
 }
 
-ABNode::ABNode(int val):
+ABNode::ABNode(std::string val):
 		ptrLeft(nullptr), data(val), ptrRight(nullptr){
 
 }
@@ -20,7 +21,7 @@ void ABNode::setRight(ABNode* node){
 	ptrRight = node;
 }
 
-void ABNode::setData(int val){
+void ABNode::setData(std::string val){
 	data = val;
 }
 
@@ -36,7 +37,7 @@ ABNode* ABNode::getRight(){
 	return ptrRight;
 }
 
-int ABNode::getData(){
+std::string ABNode::getData(){
 	return data;
 }
 

@@ -249,6 +249,54 @@ stack.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/calculator.dir/build.make CMakeFiles/calculator.dir/stack.cpp.s
 .PHONY : stack.cpp.s
 
+treeNode.o: treeNode.cpp.o
+.PHONY : treeNode.o
+
+# target to build an object file
+treeNode.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/calculator.dir/build.make CMakeFiles/calculator.dir/treeNode.cpp.o
+.PHONY : treeNode.cpp.o
+
+treeNode.i: treeNode.cpp.i
+.PHONY : treeNode.i
+
+# target to preprocess a source file
+treeNode.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/calculator.dir/build.make CMakeFiles/calculator.dir/treeNode.cpp.i
+.PHONY : treeNode.cpp.i
+
+treeNode.s: treeNode.cpp.s
+.PHONY : treeNode.s
+
+# target to generate assembly for a file
+treeNode.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/calculator.dir/build.make CMakeFiles/calculator.dir/treeNode.cpp.s
+.PHONY : treeNode.cpp.s
+
+treeStack.o: treeStack.cpp.o
+.PHONY : treeStack.o
+
+# target to build an object file
+treeStack.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/calculator.dir/build.make CMakeFiles/calculator.dir/treeStack.cpp.o
+.PHONY : treeStack.cpp.o
+
+treeStack.i: treeStack.cpp.i
+.PHONY : treeStack.i
+
+# target to preprocess a source file
+treeStack.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/calculator.dir/build.make CMakeFiles/calculator.dir/treeStack.cpp.i
+.PHONY : treeStack.cpp.i
+
+treeStack.s: treeStack.cpp.s
+.PHONY : treeStack.s
+
+# target to generate assembly for a file
+treeStack.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/calculator.dir/build.make CMakeFiles/calculator.dir/treeStack.cpp.s
+.PHONY : treeStack.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -273,6 +321,12 @@ help:
 	@echo "... stack.o"
 	@echo "... stack.i"
 	@echo "... stack.s"
+	@echo "... treeNode.o"
+	@echo "... treeNode.i"
+	@echo "... treeNode.s"
+	@echo "... treeStack.o"
+	@echo "... treeStack.i"
+	@echo "... treeStack.s"
 .PHONY : help
 
 

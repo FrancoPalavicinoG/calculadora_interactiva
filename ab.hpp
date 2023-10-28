@@ -1,20 +1,24 @@
-#ifndef AB_HPP_
-#define AB_HPP_
+#ifndef Tree_HPP_
+#define Tree_HPP_
 
-#include "abNode.hpp"
+#include "treeNode.hpp"
+#include "treeNode.hpp"
+#include <iostream>
 
-namespace trees {
+namespace eda {
 
-class AB {
+class Tree {
 private:
-	ABNode* root;
+	TreeNode* root;
 public:
-	AB();
-	void insert_rec(int val, ABNode* node);
-	void insert(int val);
-	void traverse_rec(ABNode* node, int level);
+	Tree();
+	void setRoot(TreeNode* root);
+	TreeNode* getRoot();
+	void insert_rec(std::string val, TreeNode* node);
+	void insert(std::string val);
+	void traverse_rec(eda::TreeNode* node, int level);
 	void traverse();
-	virtual ~AB();
+	virtual ~Tree();
 };
 
 } 

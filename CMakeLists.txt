@@ -11,7 +11,7 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 
-add_executable(calculator calculator.cpp node.cpp stack.cpp ab.cpp abNode.cpp)
+add_executable(calculator calculator.cpp node.cpp stack.cpp ab.cpp abNode.cpp treeNode.cpp treeStack.cpp)
 target_include_directories(calculator PUBLIC ${PROJECT_SOURCE_DIR}/include)
 
 # add the executable
