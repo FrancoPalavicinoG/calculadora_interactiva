@@ -7,17 +7,17 @@
 namespace eda {
 
 class TreeNode {
-private:
+public:
     std::string data;
     TreeNode* ptrNext;
     TreeNode* ptrLeft;
     TreeNode* ptrRight;
     int size;
 
-public:
+
     TreeNode();
     TreeNode(std::string val);
-    TreeNode(std::string val, TreeNode* next);
+    TreeNode* create_node(std::string s);
     void setData(std::string _data);
     void setNext(TreeNode* _next);
     void setLeft(TreeNode* left);
@@ -32,6 +32,6 @@ public:
     virtual ~TreeNode();
 };
 
-} // namespace eda
+}
 
 #endif

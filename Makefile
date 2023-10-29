@@ -129,53 +129,29 @@ calculator/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/calculator.dir/build.make CMakeFiles/calculator.dir/build
 .PHONY : calculator/fast
 
-ab.o: ab.cpp.o
-.PHONY : ab.o
+arbol.o: arbol.cpp.o
+.PHONY : arbol.o
 
 # target to build an object file
-ab.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/calculator.dir/build.make CMakeFiles/calculator.dir/ab.cpp.o
-.PHONY : ab.cpp.o
+arbol.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/calculator.dir/build.make CMakeFiles/calculator.dir/arbol.cpp.o
+.PHONY : arbol.cpp.o
 
-ab.i: ab.cpp.i
-.PHONY : ab.i
-
-# target to preprocess a source file
-ab.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/calculator.dir/build.make CMakeFiles/calculator.dir/ab.cpp.i
-.PHONY : ab.cpp.i
-
-ab.s: ab.cpp.s
-.PHONY : ab.s
-
-# target to generate assembly for a file
-ab.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/calculator.dir/build.make CMakeFiles/calculator.dir/ab.cpp.s
-.PHONY : ab.cpp.s
-
-abNode.o: abNode.cpp.o
-.PHONY : abNode.o
-
-# target to build an object file
-abNode.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/calculator.dir/build.make CMakeFiles/calculator.dir/abNode.cpp.o
-.PHONY : abNode.cpp.o
-
-abNode.i: abNode.cpp.i
-.PHONY : abNode.i
+arbol.i: arbol.cpp.i
+.PHONY : arbol.i
 
 # target to preprocess a source file
-abNode.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/calculator.dir/build.make CMakeFiles/calculator.dir/abNode.cpp.i
-.PHONY : abNode.cpp.i
+arbol.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/calculator.dir/build.make CMakeFiles/calculator.dir/arbol.cpp.i
+.PHONY : arbol.cpp.i
 
-abNode.s: abNode.cpp.s
-.PHONY : abNode.s
+arbol.s: arbol.cpp.s
+.PHONY : arbol.s
 
 # target to generate assembly for a file
-abNode.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/calculator.dir/build.make CMakeFiles/calculator.dir/abNode.cpp.s
-.PHONY : abNode.cpp.s
+arbol.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/calculator.dir/build.make CMakeFiles/calculator.dir/arbol.cpp.s
+.PHONY : arbol.cpp.s
 
 calculator.o: calculator.cpp.o
 .PHONY : calculator.o
@@ -273,30 +249,6 @@ treeNode.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/calculator.dir/build.make CMakeFiles/calculator.dir/treeNode.cpp.s
 .PHONY : treeNode.cpp.s
 
-treeStack.o: treeStack.cpp.o
-.PHONY : treeStack.o
-
-# target to build an object file
-treeStack.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/calculator.dir/build.make CMakeFiles/calculator.dir/treeStack.cpp.o
-.PHONY : treeStack.cpp.o
-
-treeStack.i: treeStack.cpp.i
-.PHONY : treeStack.i
-
-# target to preprocess a source file
-treeStack.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/calculator.dir/build.make CMakeFiles/calculator.dir/treeStack.cpp.i
-.PHONY : treeStack.cpp.i
-
-treeStack.s: treeStack.cpp.s
-.PHONY : treeStack.s
-
-# target to generate assembly for a file
-treeStack.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/calculator.dir/build.make CMakeFiles/calculator.dir/treeStack.cpp.s
-.PHONY : treeStack.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -306,12 +258,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... calculator"
-	@echo "... ab.o"
-	@echo "... ab.i"
-	@echo "... ab.s"
-	@echo "... abNode.o"
-	@echo "... abNode.i"
-	@echo "... abNode.s"
+	@echo "... arbol.o"
+	@echo "... arbol.i"
+	@echo "... arbol.s"
 	@echo "... calculator.o"
 	@echo "... calculator.i"
 	@echo "... calculator.s"
@@ -324,9 +273,6 @@ help:
 	@echo "... treeNode.o"
 	@echo "... treeNode.i"
 	@echo "... treeNode.s"
-	@echo "... treeStack.o"
-	@echo "... treeStack.i"
-	@echo "... treeStack.s"
 .PHONY : help
 
 

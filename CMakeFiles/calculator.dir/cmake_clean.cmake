@@ -1,8 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/calculator.dir/ab.cpp.o"
-  "CMakeFiles/calculator.dir/ab.cpp.o.d"
-  "CMakeFiles/calculator.dir/abNode.cpp.o"
-  "CMakeFiles/calculator.dir/abNode.cpp.o.d"
+  "CMakeFiles/calculator.dir/arbol.cpp.o"
+  "CMakeFiles/calculator.dir/arbol.cpp.o.d"
   "CMakeFiles/calculator.dir/calculator.cpp.o"
   "CMakeFiles/calculator.dir/calculator.cpp.o.d"
   "CMakeFiles/calculator.dir/node.cpp.o"
@@ -11,8 +9,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/calculator.dir/stack.cpp.o.d"
   "CMakeFiles/calculator.dir/treeNode.cpp.o"
   "CMakeFiles/calculator.dir/treeNode.cpp.o.d"
-  "CMakeFiles/calculator.dir/treeStack.cpp.o"
-  "CMakeFiles/calculator.dir/treeStack.cpp.o.d"
   "calculator"
   "calculator.pdb"
 )

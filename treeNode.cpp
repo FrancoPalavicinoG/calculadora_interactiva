@@ -10,7 +10,12 @@ TreeNode::TreeNode() : data(""), ptrNext(nullptr), ptrLeft(nullptr), ptrRight(nu
 TreeNode::TreeNode(std::string val) : data(val), ptrNext(nullptr), ptrLeft(nullptr), ptrRight(nullptr), size(0) {
 }
 
-TreeNode::TreeNode(std::string val, TreeNode* next) : data(val), ptrNext(next), ptrLeft(nullptr), ptrRight(nullptr), size(0) {
+TreeNode* TreeNode::create_node(std::string data) {
+    TreeNode* new_node = new TreeNode();
+    new_node->data = data;
+    new_node->ptrLeft = nullptr;
+    new_node->ptrRight = nullptr;
+    return new_node;
 }
 
 void TreeNode::setData(std::string _data){

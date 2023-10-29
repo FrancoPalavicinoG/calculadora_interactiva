@@ -5,9 +5,8 @@
 #include "node.hpp"
 #include "stack.hpp"
 #include "calculator.hpp"
-#include "ab.hpp"
 #include "treeNode.hpp"
-#include "treeStack.hpp"
+#include "arbol.hpp"
 
 using namespace eda;
 using namespace std;
@@ -28,6 +27,7 @@ int Calculator::prec(char c){
 }
 
 string Calculator::infixToPostfix(string s) {
+    aux = "";
     Stack st;
     string result;
     for (int i = 0; i < s.length(); i++) {
@@ -44,34 +44,44 @@ string Calculator::infixToPostfix(string s) {
             i--; // Retrocede para evitar saltarse el siguiente carácter
             if (var.find(token) != var.end()) {
                 result += to_string(var[token]); // Reemplaza por el valor numérico
+                aux += token;
             } else {
                 result += token; // Mantén la variable si no está definida
+                aux += token;
             }
         } else if (c == '(') {
             st.push(c);
         } else if (c == ')') {
             while (!st.isEmpty() && st.top()->getData() != '(') {
                 result += ' ';
+                aux += ' ';
                 result += st.top()->getData();
+                aux += st.top()->getData();
                 st.pop();
             }
             st.pop();
         } else {
             while (!st.isEmpty() && prec(c) <= prec(st.top()->getData())) {
                 result += ' ';
+                aux += ' ';
                 result += st.top()->getData();
+                aux += st.top()->getData();
                 st.pop();
             }
             result += ' ';
+            aux += ' ';
             st.push(c);
         }
     }
     while (!st.isEmpty()) {
         result += ' ';
+        aux += ' ';
         result += st.top()->getData();
+        aux += st.top()->getData();
         st.pop();
     }
     cout << result << endl;
+    cout << aux << endl;
     return result;
 }
 
@@ -148,29 +158,28 @@ void Calculator::printVar(const string s) {
         }
     cout << "Variable no definida: " << s << endl;
 }
-
-void Calculator::tree(string s) {
-    TreeStack p;
-    istringstream ss(s);
-    string token;
-    Tree tree;
-    while (ss >> token) {
-        if (token == "+" || token == "-" || token == "*" || token == "/" || token == "^") {
-            tree.insert(token);
-            std::string left = p.top()->getData();
-            p.pop();
-            tree.insert(left);
-            std::string right = p.top()->getData();
-            p.pop();
-            tree.insert(right);
-            p.push(token);
-        } else {           
-            p.push(token);
-        }
-    }
-    tree.traverse();
-}
     
+TreeNode* Calculator::createTree() {
+        stack<TreeNode*> p;
+        istringstream ss(aux);
+        string token;
+        while (ss >> token) {
+            if (token == "+" || token == "-" || token == "*" || token == "/" || token == "^") {
+                TreeNode n; 
+                TreeNode* new_node = n.create_node(token); 
+                new_node->ptrRight = p.top();
+                p.pop();
+                new_node->ptrLeft = p.top();
+                p.pop();
+                p.push(new_node);
+            }else {
+                TreeNode n; 
+                TreeNode* new_node = n.create_node(token); 
+                p.push(new_node);
+            }
+        }
+        return p.top();
+    }
 
 void Calculator::interfaz() {
     cout << "\n";
@@ -180,7 +189,6 @@ void Calculator::interfaz() {
     while (true){
         cout << "$ ";
         getline(cin, comando);
-        //cout << "Ingresaste: " << comando << endl;
         if (comando == "FIN" || comando == "fin" || comando == "Fin") {
             break;  
         } else {
@@ -189,41 +197,21 @@ void Calculator::interfaz() {
                 setVar(comando);
             }else{
                 string postfixExpression = infixToPostfix(comando);
-                tree(postfixExpression);
+                AB t;
+                t.root = createTree();
+                t.traverse();
                 float result = postfix(postfixExpression);
                 cout << "ans = " << result << endl;
             }
         }
     }
 }
+
 }
 
 int main() {
     calculator::Calculator calc;
     calc.interfaz();
-    //calc.tree();
-    // // Prueba infixToPostfix
-    // calc.setVar("x = 1");
-    // calc.setVar("y = 4");
-    // std::string infixExpression = "x + x * 2 + ans";
-    // std::string postfixExpression = calc.infixToPostfix(infixExpression);
-    // std::cout << "Postfix Expression: " << postfixExpression << std::endl;
-    // //map<string, int> vars = calc.getVars();
-    // int result = calc.postfix(postfixExpression);
-    // std::cout << "Result: " << result << std::endl;
-    
-
-    // // Prueba setVar
-    // //calc.setVar("x=2");
-    // calc.setVar("y = 5");
-    // cout << "Variables definidas:" << endl;
-    // calc.printVar("x");
-    
-
-    // Prueba postfix
-
-    //std::cout << "Result: " << result << std::endl;
-   
     return 0;
 }
 
