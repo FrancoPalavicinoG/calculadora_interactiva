@@ -125,19 +125,19 @@ CMakeFiles/calculator.dir/treeNode.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/calculator.dir/treeNode.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/franco_palavicino/Desktop/EDA/tarea3/treeNode.cpp -o CMakeFiles/calculator.dir/treeNode.cpp.s
 
-CMakeFiles/calculator.dir/arbol.cpp.o: CMakeFiles/calculator.dir/flags.make
-CMakeFiles/calculator.dir/arbol.cpp.o: arbol.cpp
-CMakeFiles/calculator.dir/arbol.cpp.o: CMakeFiles/calculator.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/franco_palavicino/Desktop/EDA/tarea3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/calculator.dir/arbol.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/calculator.dir/arbol.cpp.o -MF CMakeFiles/calculator.dir/arbol.cpp.o.d -o CMakeFiles/calculator.dir/arbol.cpp.o -c /Users/franco_palavicino/Desktop/EDA/tarea3/arbol.cpp
+CMakeFiles/calculator.dir/tree.cpp.o: CMakeFiles/calculator.dir/flags.make
+CMakeFiles/calculator.dir/tree.cpp.o: tree.cpp
+CMakeFiles/calculator.dir/tree.cpp.o: CMakeFiles/calculator.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/franco_palavicino/Desktop/EDA/tarea3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/calculator.dir/tree.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/calculator.dir/tree.cpp.o -MF CMakeFiles/calculator.dir/tree.cpp.o.d -o CMakeFiles/calculator.dir/tree.cpp.o -c /Users/franco_palavicino/Desktop/EDA/tarea3/tree.cpp
 
-CMakeFiles/calculator.dir/arbol.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/calculator.dir/arbol.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/franco_palavicino/Desktop/EDA/tarea3/arbol.cpp > CMakeFiles/calculator.dir/arbol.cpp.i
+CMakeFiles/calculator.dir/tree.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/calculator.dir/tree.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/franco_palavicino/Desktop/EDA/tarea3/tree.cpp > CMakeFiles/calculator.dir/tree.cpp.i
 
-CMakeFiles/calculator.dir/arbol.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/calculator.dir/arbol.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/franco_palavicino/Desktop/EDA/tarea3/arbol.cpp -o CMakeFiles/calculator.dir/arbol.cpp.s
+CMakeFiles/calculator.dir/tree.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/calculator.dir/tree.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/franco_palavicino/Desktop/EDA/tarea3/tree.cpp -o CMakeFiles/calculator.dir/tree.cpp.s
 
 # Object files for target calculator
 calculator_OBJECTS = \
@@ -145,7 +145,7 @@ calculator_OBJECTS = \
 "CMakeFiles/calculator.dir/node.cpp.o" \
 "CMakeFiles/calculator.dir/stack.cpp.o" \
 "CMakeFiles/calculator.dir/treeNode.cpp.o" \
-"CMakeFiles/calculator.dir/arbol.cpp.o"
+"CMakeFiles/calculator.dir/tree.cpp.o"
 
 # External object files for target calculator
 calculator_EXTERNAL_OBJECTS =
@@ -154,7 +154,7 @@ calculator: CMakeFiles/calculator.dir/calculator.cpp.o
 calculator: CMakeFiles/calculator.dir/node.cpp.o
 calculator: CMakeFiles/calculator.dir/stack.cpp.o
 calculator: CMakeFiles/calculator.dir/treeNode.cpp.o
-calculator: CMakeFiles/calculator.dir/arbol.cpp.o
+calculator: CMakeFiles/calculator.dir/tree.cpp.o
 calculator: CMakeFiles/calculator.dir/build.make
 calculator: CMakeFiles/calculator.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/franco_palavicino/Desktop/EDA/tarea3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable calculator"

@@ -1,12 +1,12 @@
-#include "arbol.hpp"
+#include "tree.hpp"
 #include <string>
 #include <iostream>
 
 namespace eda {
 
-AB::AB():root(nullptr) {}
+Tree::Tree():root(nullptr) {}
 
-void AB::traverse_rec(eda::TreeNode* node, int level){
+void Tree::traverse_rec(eda::TreeNode* node, int level){
 	if (node != nullptr){
 		std::cout << std::string(level*2, '-');
 		std::cout << " " << node->getData() << std::endl;
@@ -15,11 +15,11 @@ void AB::traverse_rec(eda::TreeNode* node, int level){
 	}
 }
 
-void AB::traverse(){
+void Tree::traverse(){
 	traverse_rec(root, 1);
 }
 
-AB::~AB() {
+Tree::~Tree() {
 	delete root;
 }
 

@@ -1,18 +1,18 @@
-#ifndef ARBOL_HPP_
-#define ARBOL_HPP_
+#ifndef TREE_HPP_
+#define TREE_HPP_
 
 #include <iostream>
 #include "treeNode.hpp"
 
 namespace eda {
 
-class AB {
+class Tree {
 public:
 	TreeNode* root;
-	AB();
+	Tree();
 	void traverse_rec(TreeNode* node, int level);
 	void traverse();
-	virtual ~AB();
+	virtual ~Tree();
 };
 
 }

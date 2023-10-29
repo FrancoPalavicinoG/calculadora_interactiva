@@ -12,14 +12,13 @@ public:
     std::string aux;
     float ans = 0;
     std::map <std::string, int> var;
-    void setVar(std::string s);
-    void interfaz();
-    eda::TreeNode* createTree();
-    void printVar(const std::string s);
-	Calculator();
+    Calculator();
     int prec(char c);
-	std::string infixToPostfix(std::string s);
+    std::string infixToPostfix(std::string s);
     float postfix(std::string s);
+    void setVar(std::string s);
+    eda::TreeNode* createTree();
+    void interfaz();
 	};
 }
 

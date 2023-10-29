@@ -129,30 +129,6 @@ calculator/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/calculator.dir/build.make CMakeFiles/calculator.dir/build
 .PHONY : calculator/fast
 
-arbol.o: arbol.cpp.o
-.PHONY : arbol.o
-
-# target to build an object file
-arbol.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/calculator.dir/build.make CMakeFiles/calculator.dir/arbol.cpp.o
-.PHONY : arbol.cpp.o
-
-arbol.i: arbol.cpp.i
-.PHONY : arbol.i
-
-# target to preprocess a source file
-arbol.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/calculator.dir/build.make CMakeFiles/calculator.dir/arbol.cpp.i
-.PHONY : arbol.cpp.i
-
-arbol.s: arbol.cpp.s
-.PHONY : arbol.s
-
-# target to generate assembly for a file
-arbol.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/calculator.dir/build.make CMakeFiles/calculator.dir/arbol.cpp.s
-.PHONY : arbol.cpp.s
-
 calculator.o: calculator.cpp.o
 .PHONY : calculator.o
 
@@ -225,6 +201,30 @@ stack.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/calculator.dir/build.make CMakeFiles/calculator.dir/stack.cpp.s
 .PHONY : stack.cpp.s
 
+tree.o: tree.cpp.o
+.PHONY : tree.o
+
+# target to build an object file
+tree.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/calculator.dir/build.make CMakeFiles/calculator.dir/tree.cpp.o
+.PHONY : tree.cpp.o
+
+tree.i: tree.cpp.i
+.PHONY : tree.i
+
+# target to preprocess a source file
+tree.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/calculator.dir/build.make CMakeFiles/calculator.dir/tree.cpp.i
+.PHONY : tree.cpp.i
+
+tree.s: tree.cpp.s
+.PHONY : tree.s
+
+# target to generate assembly for a file
+tree.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/calculator.dir/build.make CMakeFiles/calculator.dir/tree.cpp.s
+.PHONY : tree.cpp.s
+
 treeNode.o: treeNode.cpp.o
 .PHONY : treeNode.o
 
@@ -258,9 +258,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... calculator"
-	@echo "... arbol.o"
-	@echo "... arbol.i"
-	@echo "... arbol.s"
 	@echo "... calculator.o"
 	@echo "... calculator.i"
 	@echo "... calculator.s"
@@ -270,6 +267,9 @@ help:
 	@echo "... stack.o"
 	@echo "... stack.i"
 	@echo "... stack.s"
+	@echo "... tree.o"
+	@echo "... tree.i"
+	@echo "... tree.s"
 	@echo "... treeNode.o"
 	@echo "... treeNode.i"
 	@echo "... treeNode.s"

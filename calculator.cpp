@@ -6,7 +6,7 @@
 #include "stack.hpp"
 #include "calculator.hpp"
 #include "treeNode.hpp"
-#include "arbol.hpp"
+#include "tree.hpp"
 
 using namespace eda;
 using namespace std;
@@ -80,8 +80,8 @@ string Calculator::infixToPostfix(string s) {
         aux += st.top()->getData();
         st.pop();
     }
-    cout << result << endl;
-    cout << aux << endl;
+    //cout << result << endl;
+    //cout << aux << endl;
     return result;
 }
 
@@ -106,6 +106,7 @@ float Calculator::postfix(string s) {
             } else if (token == "/") {
                 if (second == 0){
                     cout << "Error: Divide by zero" << endl;
+                    ans = 0;
                 }else {
                     result = first / second;
                 }
@@ -149,16 +150,7 @@ void Calculator::setVar(string s) {
     }
     */
 }
-
-void Calculator::printVar(const string s) {
-        if (var.find(s) != var.end()) {
-            int value = var[s];
-            cout << s << " = " << value << endl;
-            return; // Termina el bucle una vez que encuentre la clave deseada
-        }
-    cout << "Variable no definida: " << s << endl;
-}
-    
+ 
 TreeNode* Calculator::createTree() {
         stack<TreeNode*> p;
         istringstream ss(aux);
@@ -166,7 +158,7 @@ TreeNode* Calculator::createTree() {
         while (ss >> token) {
             if (token == "+" || token == "-" || token == "*" || token == "/" || token == "^") {
                 TreeNode n; 
-                TreeNode* new_node = n.create_node(token); 
+                TreeNode* new_node = n.setter(token); 
                 new_node->ptrRight = p.top();
                 p.pop();
                 new_node->ptrLeft = p.top();
@@ -174,7 +166,7 @@ TreeNode* Calculator::createTree() {
                 p.push(new_node);
             }else {
                 TreeNode n; 
-                TreeNode* new_node = n.create_node(token); 
+                TreeNode* new_node = n.setter(token); 
                 p.push(new_node);
             }
         }
@@ -195,11 +187,12 @@ void Calculator::interfaz() {
             char c = comando[2];
             if (c == '='){
                 setVar(comando);
-            }else{
-                string postfixExpression = infixToPostfix(comando);
-                AB t;
+            }else if (comando == "tree"){
+                Tree t;
                 t.root = createTree();
                 t.traverse();
+            }else{
+                string postfixExpression = infixToPostfix(comando);
                 float result = postfix(postfixExpression);
                 cout << "ans = " << result << endl;
             }

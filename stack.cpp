@@ -4,8 +4,6 @@
 namespace eda {
 
 Stack::Stack():head(nullptr) {
-	// TODO Auto-generated constructor stub
-
 }
 
 void Stack::push(float val){
@@ -41,7 +39,6 @@ void Stack::clear(){
 }
 
 Stack::~Stack() {
-	//std::cout<<"destructor Stack"<<std::endl;
 	clear();
 }
 

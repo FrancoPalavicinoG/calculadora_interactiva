@@ -26,10 +26,6 @@ Node* Node::getNext(){
 	return ptrNext;
 }
 
-void Node::print(){
-	std::cout << data ;
-}
-
 Node::~Node() {
 
 }

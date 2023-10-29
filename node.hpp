@@ -14,7 +14,6 @@ public:
 	void setNext(Node* _next);
 	float getData();
 	Node* getNext();
-	void print();
 	virtual ~Node();
 };
 
